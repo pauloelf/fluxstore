@@ -1,5 +1,10 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
+  "javascript": {
+    "formatter": {
+      "semicolons": "asNeeded"
+    }
+  },
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -7,12 +12,19 @@
   },
   "files": {
     "ignoreUnknown": true,
-    "includes": ["**", "!node_modules", "!.next", "!dist", "!build"]
+    "includes": [
+      "**",
+      "!node_modules",
+      "!.next",
+      "!dist",
+      "!build"
+    ]
   },
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
-    "indentWidth": 2
+    "indentWidth": 2,
+    "attributePosition": "auto"
   },
   "linter": {
     "enabled": true,
@@ -20,6 +32,13 @@
       "recommended": true,
       "suspicious": {
         "noUnknownAtRules": "off"
+      },
+      "correctness": {
+        "noUnknownTypeSelector": "off"
+      },
+      "a11y": {
+        "noNoninteractiveTabindex": "off",
+        "noLabelWithoutControl": "off"
       }
     },
     "domains": {
@@ -30,7 +49,9 @@
   "assist": {
     "actions": {
       "source": {
-        "organizeImports": "on"
+        "organizeImports": "on",
+        "useSortedProperties": "on",
+        "useSortedAttributes": "on"
       }
     }
   }
