@@ -5,6 +5,7 @@ import { useTheme } from "next-themes"
 import { useCallback, useEffect, useRef, useState } from "react"
 import { flushSync } from "react-dom"
 import { cn } from "@/lib/utils"
+import { Button } from "./button"
 
 interface AnimatedThemeTogglerProps
   extends React.ComponentPropsWithoutRef<"button"> {
@@ -69,15 +70,20 @@ export const AnimatedThemeToggler = ({
 
   if (!mounted) return null
   return (
-    <button
+    <Button
       className={cn(className)}
       onClick={toggleTheme}
       ref={buttonRef}
+      size="icon-lg"
+      variant="ghost"
       {...props}
     >
-      {theme === "dark" && <Sun />}
-      {theme === "light" && <Moon />}
+      {theme === "dark" ? (
+        <Sun className="size-6" />
+      ) : (
+        <Moon className="size-6" />
+      )}
       <span className="sr-only">Toggle theme</span>
-    </button>
+    </Button>
   )
 }
