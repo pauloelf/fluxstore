@@ -1,7 +1,10 @@
 import type { Metadata } from "next"
 import { Anton, Inter, Open_Sans, Poppins } from "next/font/google"
 import "./globals.css"
+import { Header } from "@/components/layout/header"
+import { QueryProvider } from "@/providers/query-provider"
 import { ThemeProvider } from "@/providers/theme-provider"
+import { UserProvider } from "@/providers/user-provider"
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -48,7 +51,14 @@ export default function RootLayout({
           disableTransitionOnChange
           enableSystem
         >
-          {children}
+          <QueryProvider>
+            <UserProvider>
+              <div className="flex flex-col selection:bg-primary min-h-dvh selection:text-primary-foreground">
+                <Header />
+                {children}
+              </div>
+            </UserProvider>
+          </QueryProvider>
         </ThemeProvider>
       </body>
     </html>
