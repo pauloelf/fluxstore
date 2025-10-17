@@ -7,6 +7,7 @@ import { useContext, useEffect, useState } from "react"
 import { UserContext } from "@/context/user-context"
 import { LogoDesktop, LogoMobile, LogoTablet } from "../shared/logo"
 import { Tooltip } from "../shared/tooltip"
+import { HeaderSkeleton } from "../skeletons/header-skeleton"
 import { AnimatedThemeToggler } from "../ui/animated-theme-toggler"
 import { Button } from "../ui/button"
 import {
@@ -45,7 +46,7 @@ export function Header() {
     setMounted(true)
   }, [])
 
-  if (!mounted) return null
+  if (!mounted) return <HeaderSkeleton />
   return (
     <header className="py-4">
       <div className="flex md:*:flex-1 items-center gap-4 mx-auto px-4 max-w-7xl">
