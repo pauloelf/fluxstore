@@ -67,10 +67,10 @@ export function LoginSection({
     )
   return (
     <main
-      className="relative flex flex-col flex-1 px-4 py-12 overflow-hidden"
+      className="relative flex flex-col flex-1 px-4 py-12 min-h-[calc(100dvh-72px)] overflow-hidden"
       suppressHydrationWarning
     >
-      <div className="z-5 absolute inset-0 bg-[size:4rem_4rem] opacity-20 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)]" />
+      <div className="z-5 absolute inset-0 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" />
 
       <div
         aria-hidden
