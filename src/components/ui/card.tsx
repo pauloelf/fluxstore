@@ -31,7 +31,10 @@ function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
 function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
-      className={cn("font-semibold leading-none", className)}
+      className={cn(
+        "font-secondary font-semibold text-xl leading-none",
+        className,
+      )}
       data-slot="card-title"
       {...props}
     />
@@ -41,7 +44,7 @@ function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
 function CardDescription({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
-      className={cn("text-muted-foreground text-sm", className)}
+      className={cn("font-secondary text-muted-foreground text-sm", className)}
       data-slot="card-description"
       {...props}
     />
@@ -64,7 +67,7 @@ function CardAction({ className, ...props }: React.ComponentProps<"div">) {
 function CardContent({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
-      className={cn("px-6", className)}
+      className={cn("px-6 font-secondary", className)}
       data-slot="card-content"
       {...props}
     />
