@@ -48,7 +48,7 @@ export function Header() {
 
   if (!mounted) return <HeaderSkeleton />
   return (
-    <header className="py-4">
+    <header className="py-4 h-[72px]">
       <div className="flex md:*:flex-1 items-center gap-4 mx-auto px-4 max-w-7xl">
         <NavigationMenu className="max-md:hidden" viewport={false}>
           <NavigationMenuList>
