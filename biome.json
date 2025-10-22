@@ -31,14 +31,17 @@
     "rules": {
       "recommended": true,
       "suspicious": {
-        "noUnknownAtRules": "off"
+        "noUnknownAtRules": "off",
+        "noArrayIndexKey": "off"
       },
       "correctness": {
         "noUnknownTypeSelector": "off"
       },
       "a11y": {
         "noNoninteractiveTabindex": "off",
-        "noLabelWithoutControl": "off"
+        "noLabelWithoutControl": "off",
+        "useSemanticElements": "off",
+        "noPositiveTabindex": "off"
       }
     },
     "domains": {
