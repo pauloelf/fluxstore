@@ -15,3 +15,10 @@ export const formatGenre = (genre: string) => {
       return "Outro"
   }
 }
+
+export const formatPrice = (price: number) => {
+  return price.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  })
+}
