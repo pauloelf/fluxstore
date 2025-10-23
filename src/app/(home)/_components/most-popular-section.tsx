@@ -2,10 +2,13 @@
 
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
+import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 import { useRef } from "react"
 import type { Product } from "@/@types/product-types"
 import { LoadingSpinner } from "@/components/shared/loading-spinner"
 import { ProductCard } from "@/components/shared/product-card"
+import { Button } from "@/components/ui/button"
 import { useProducts } from "@/hooks/useProducts"
 
 export function MostPopularSection() {
@@ -67,6 +70,15 @@ export function MostPopularSection() {
           ))}
         </div>
       )}
+
+      <div className="flex justify-center">
+        <Link className="z-10" href="/loja" tabIndex={-1}>
+          <Button pointer size="lg" variant="default">
+            Ver Produtos
+            <ArrowRight />
+          </Button>
+        </Link>
+      </div>
     </section>
   )
 }

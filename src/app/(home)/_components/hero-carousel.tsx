@@ -3,6 +3,7 @@
 import { useGSAP } from "@gsap/react"
 import Autoplay from "embla-carousel-autoplay"
 import gsap from "gsap"
+import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useRef } from "react"
@@ -127,6 +128,7 @@ export function HeroCarousel() {
                   >
                     <Button className="bg-[#007779] text-white" size="lg">
                       {slide.cta}
+                      <ArrowRight />
                     </Button>
                   </Link>
                 </div>
