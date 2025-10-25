@@ -32,14 +32,3 @@ type Review = {
   reviewerName: string
   reviewerEmail: string
 }
-
-export type ProductSortingOption = "price" | "title" | "rating"
-
-export type ProductSortOrder = "asc" | "desc"
-
-export type ProductParams = {
-  sortBy?: ProductSortingOption
-  order?: ProductSortOrder
-  limit?: number
-  skip?: number
-}
