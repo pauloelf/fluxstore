@@ -30,12 +30,12 @@ import {
 } from "../ui/navigation-menu"
 
 const shopCategories = [
-  { name: "Beleza", href: "/loja/beauty" },
-  { name: "Fragrâncias", href: "/loja/fragrances" },
-  { name: "Mantimentos", href: "/loja/groceries" },
-  { name: "Smartphones", href: "/loja/smartphones" },
-  { name: "Decoração de Casa", href: "/loja/home-decoration" },
-  { name: "Acessórios de Desporto", href: "/loja/sports-accessories" },
+  { name: "Beleza", href: "/loja?category=beauty" },
+  { name: "Fragrâncias", href: "/loja?category=fragrances" },
+  { name: "Mantimentos", href: "/loja?category=groceries" },
+  { name: "Smartphones", href: "/loja?category=smartphones" },
+  { name: "Decoração de Casa", href: "/loja?category=home-decoration" },
+  { name: "Acessórios de Desporto", href: "/loja?category=sports-accessories" },
 ]
 
 export function Header() {
