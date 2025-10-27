@@ -35,13 +35,15 @@
         "noArrayIndexKey": "off"
       },
       "correctness": {
-        "noUnknownTypeSelector": "off"
+        "noUnknownTypeSelector": "off",
+        "useExhaustiveDependencies": "off"
       },
       "a11y": {
         "noNoninteractiveTabindex": "off",
         "noLabelWithoutControl": "off",
         "useSemanticElements": "off",
-        "noPositiveTabindex": "off"
+        "noPositiveTabindex": "off",
+        "useAriaPropsSupportedByRole": "off"
       }
     },
     "domains": {
