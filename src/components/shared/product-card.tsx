@@ -28,6 +28,7 @@ export function ProductCard({
           alt={`Imagem do produto ${product.title}` || "Imagem do produto"}
           className="w-full h-full object-cover group-focus:scale-110 group-hover:scale-110 transition-transform duration-500"
           height={400}
+          priority
           src={product.thumbnail || ""}
           width={400}
         />
