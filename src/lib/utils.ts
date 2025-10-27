@@ -22,3 +22,8 @@ export const formatPrice = (price: number) => {
     currency: "BRL",
   })
 }
+
+export const getTotalPages = (total: number) => {
+  const totalPages = Math.ceil(total / 16)
+  return { total: totalPages }
+}
