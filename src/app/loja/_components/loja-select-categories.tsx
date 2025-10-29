@@ -40,7 +40,7 @@ export function LojaSelectCategories({
       setCategory("all")
       setFilters({ ...filters, category: "" })
     }
-  }, [params, data])
+  }, [params.get("category")])
 
   const handleChangeCategoryValue = (value: string) => {
     setCategory(value)
