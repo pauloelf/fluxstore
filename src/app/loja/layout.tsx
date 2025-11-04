@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
-import type { ReactNode } from "react"
+import { type ReactNode, Suspense } from "react"
+import { LoadingSpinner } from "@/components/shared/loading-spinner"
 import { FiltersProvider } from "@/providers/filters-provider"
 
 export const metadata: Metadata = {
@@ -8,5 +9,9 @@ export const metadata: Metadata = {
 }
 
 export default function LojaRoot({ children }: { children: ReactNode }) {
-  return <FiltersProvider>{children}</FiltersProvider>
+  return (
+    <Suspense fallback={<LoadingSpinner message="Carregando..." />}>
+      <FiltersProvider>{children}</FiltersProvider>
+    </Suspense>
+  )
 }
