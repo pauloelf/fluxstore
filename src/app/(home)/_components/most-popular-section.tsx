@@ -43,7 +43,7 @@ export function MostPopularSection() {
       className="relative space-y-6 mx-auto px-4 py-16 w-full max-w-7xl"
       ref={containerRef}
     >
-      <div className="z-5 absolute inset-0 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" />
+      <div className="z-5 absolute inset-0 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20 m-0" />
 
       <div className="z-10 space-y-2 text-center">
         <h2 className="font-bold text-4xl lg:text-5xl" ref={titleRef}>
