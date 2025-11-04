@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Anton, Inter, Open_Sans, Poppins } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/components/layout/header"
+import { CartProvider } from "@/providers/cart-provider"
 import { QueryProvider } from "@/providers/query-provider"
 import { ThemeProvider } from "@/providers/theme-provider"
 import { UserProvider } from "@/providers/user-provider"
@@ -9,7 +10,7 @@ import { UserProvider } from "@/providers/user-provider"
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500", "700"],
 })
 
 const inter = Inter({
@@ -53,10 +54,12 @@ export default function RootLayout({
         >
           <QueryProvider>
             <UserProvider>
-              <div className="flex flex-col selection:bg-primary min-h-dvh selection:text-primary-foreground">
-                <Header />
-                {children}
-              </div>
+              <CartProvider>
+                <div className="flex flex-col selection:bg-primary min-h-dvh selection:text-primary-foreground">
+                  <Header />
+                  {children}
+                </div>
+              </CartProvider>
             </UserProvider>
           </QueryProvider>
         </ThemeProvider>
