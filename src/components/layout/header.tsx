@@ -4,6 +4,7 @@ import { Menu, ShoppingCart, User2 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useContext, useEffect, useState } from "react"
+import { CartContext } from "@/context/cart-context"
 import { UserContext } from "@/context/user-context"
 import { LogoDesktop, LogoMobile, LogoTablet } from "../shared/logo"
 import { Tooltip } from "../shared/tooltip"
@@ -41,6 +42,7 @@ const shopCategories = [
 export function Header() {
   const { isAuthenticated, user } = useContext(UserContext)
   const [mounted, setMounted] = useState(false)
+  const { cart } = useContext(CartContext)
 
   useEffect(() => {
     setMounted(true)
@@ -155,7 +157,7 @@ export function Header() {
           {isAuthenticated && user ? (
             <>
               <Tooltip content="Carrinho" side="bottom">
-                <Link href="/carrinho" tabIndex={-1}>
+                <Link className="relative" href="/carrinho" tabIndex={-1}>
                   <Button
                     aria-label="Carrinho"
                     pointer
@@ -163,6 +165,9 @@ export function Header() {
                     variant="ghost"
                   >
                     <ShoppingCart className="size-6" />
+                    <span className="-top-4/5 left-1/2 absolute flex justify-center items-center bg-accent rounded-full size-6 font-detail font-semibold text-xs text-accent-foreground">
+                      {cart?.totalQuantity}
+                    </span>
                   </Button>
                 </Link>
               </Tooltip>
