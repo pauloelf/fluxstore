@@ -9,6 +9,7 @@ export type Product = {
   stock: number
   tags: string[]
   sku: string
+  brand?: string
   weight: string
   dimensions: {
     width: number
