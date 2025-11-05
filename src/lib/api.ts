@@ -7,4 +7,13 @@ const api = axios.create({
   },
 })
 
+export const fetchProduct = async (id: string) => {
+  const response = await api.get(`products/${id}`, {
+    params: {
+      select: ["title", "description"],
+    },
+  })
+  return response.data
+}
+
 export default api
