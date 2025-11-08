@@ -178,6 +178,7 @@ export function ProductDetails({ product }: { product: Product }) {
         <h3 className="font-primary font-medium">Quantidade:</h3>
         <div className="flex items-center gap-3 select-none">
           <Button
+            aria-label="Diminuir quantidade"
             disabled={quantity <= 1}
             onClick={() => setQuantity((q) => Math.max(1, q - 1))}
             size="icon-lg"
@@ -189,6 +190,7 @@ export function ProductDetails({ product }: { product: Product }) {
             {quantity}
           </span>
           <Button
+            aria-label="Aumentar quantidade"
             disabled={quantity >= 99}
             onClick={() => setQuantity((q) => Math.min(99, q + 1))}
             size="icon-lg"
