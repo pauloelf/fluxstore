@@ -107,10 +107,10 @@ export function CartSummary({
               onClick={handleFinalizePurchase}
               size="lg"
             >
-              {checkoutSuccess ? (
+              {isCheckingOut ? (
                 <>
                   <Loader2 className="size-5 animate-spin" />
-                  Finalizar compra
+                  Finalizando compra
                 </>
               ) : (
                 <>
