@@ -181,6 +181,7 @@ export function Header() {
                   <Image
                     alt={user.firstName}
                     height={32}
+                    priority
                     src={user.image}
                     width={32}
                   />
