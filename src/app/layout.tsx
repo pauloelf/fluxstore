@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Anton, Inter, Open_Sans, Poppins } from "next/font/google"
 import "./globals.css"
+import { Footer } from "@/components/layout/footer"
 import { Header } from "@/components/layout/header"
 import { CartProvider } from "@/providers/cart-provider"
 import { QueryProvider } from "@/providers/query-provider"
@@ -58,6 +59,7 @@ export default function RootLayout({
                 <div className="flex flex-col selection:bg-primary min-h-dvh selection:text-primary-foreground">
                   <Header />
                   {children}
+                  <Footer />
                 </div>
               </CartProvider>
             </UserProvider>
