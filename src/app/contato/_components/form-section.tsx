@@ -81,7 +81,7 @@ export function FormSection() {
         ) : (
           <>
             <div>
-              <label className="ml-3" htmlFor="name">
+              <label className="ml-3 font-detail font-medium" htmlFor="name">
                 Nome
               </label>
               <Input
@@ -93,7 +93,7 @@ export function FormSection() {
               />
             </div>
             <div>
-              <label className="ml-3" htmlFor="email">
+              <label className="ml-3 font-detail font-medium" htmlFor="email">
                 Email
               </label>
               <Input
@@ -105,7 +105,7 @@ export function FormSection() {
               />
             </div>
             <div>
-              <label className="ml-3" htmlFor="message">
+              <label className="ml-3 font-detail font-medium" htmlFor="message">
                 Mensagem
               </label>
               <Textarea
