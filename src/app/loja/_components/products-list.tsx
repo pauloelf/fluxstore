@@ -2,6 +2,7 @@
 
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
+import { Search } from "lucide-react"
 import { useRef } from "react"
 import type { Product } from "@/@types/product-types"
 import { LoadingSpinner } from "@/components/shared/loading-spinner"
@@ -39,6 +40,18 @@ export function ProductsList() {
       <div ref={containerRef}>
         {isLoading ? (
           <LoadingSpinner message="Carregando produtos..." />
+        ) : data?.products.length === 0 ? (
+          <div className="flex flex-col justify-center items-center gap-4 min-h-[40vh] text-center">
+            <div className="bg-muted p-6 rounded-full">
+              <Search className="w-12 h-12 text-muted-foreground" />
+            </div>
+            <h3 className="font-semibold text-xl">Nenhum Produto Encontrado</h3>
+            <p className="text-muted-foreground">
+              Talvez esse produto não exista ou não o temos em nossa loja.{" "}
+              <br />
+              Tente uma busca diferente
+            </p>
+          </div>
         ) : (
           <div className="gap-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 py-6">
             {data?.products?.map((product) => (
