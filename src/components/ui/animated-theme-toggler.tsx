@@ -17,8 +17,8 @@ export const AnimatedThemeToggler = ({
   duration = 400,
   ...props
 }: AnimatedThemeTogglerProps) => {
-  const { theme, setTheme } = useTheme()
-  const [isDark, setIsDark] = useState(theme === "dark")
+  const { resolvedTheme, setTheme } = useTheme()
+  const [isDark, setIsDark] = useState(resolvedTheme === "dark")
   const buttonRef = useRef<HTMLButtonElement>(null)
   const [mounted, setMounted] = useState(false)
 
@@ -28,11 +28,11 @@ export const AnimatedThemeToggler = ({
 
   useEffect(() => {
     const updateTheme = () => {
-      setIsDark(theme === "dark")
+      setIsDark(resolvedTheme === "dark")
     }
 
     updateTheme()
-  }, [theme])
+  }, [resolvedTheme])
 
   const toggleTheme = useCallback(async () => {
     if (!buttonRef.current) return
@@ -78,11 +78,7 @@ export const AnimatedThemeToggler = ({
       variant="ghost"
       {...props}
     >
-      {theme === "dark" ? (
-        <Sun className="size-6" />
-      ) : (
-        <Moon className="size-6" />
-      )}
+      {isDark ? <Sun className="size-6" /> : <Moon className="size-6" />}
       <span className="sr-only">Toggle theme</span>
     </Button>
   )
