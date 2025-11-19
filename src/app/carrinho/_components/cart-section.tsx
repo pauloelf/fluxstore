@@ -25,7 +25,6 @@ export function CartSection({
 }: CartSectionInterface) {
   const { isAuthenticated, user } = useContext(UserContext)
   const [checkoutSuccess, setCheckoutSuccess] = useState(false)
-  const router = useRouter()
   const pathname = usePathname()
 
   const titleRef = useRef(null)
@@ -41,12 +40,6 @@ export function CartSection({
       hasEnteredPage.current = true
     }
   }, [pathname])
-
-  useEffect(() => {
-    if (!isAuthenticated) {
-      router.push("/login")
-    }
-  }, [router, isAuthenticated])
 
   useGSAP(
     () => {
